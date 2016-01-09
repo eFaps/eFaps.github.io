@@ -1,4 +1,3 @@
 Data for the eFaps project website
 ========================================
-
-The project just moved from googlecode to github.
+Repository for the eFaps Webpage at [www.efaps.org](http://www.efaps.org "eFaps.org"). 
