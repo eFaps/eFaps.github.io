@@ -82,6 +82,10 @@ th, td {
   border-bottom:1px solid #e5e5e5;
 }
 
+tr > td:NTH-CHILD(1) img {
+  height: 16px;
+}
+
 tr > td:NTH-CHILD(2) {
   width: 150px;
 }
