@@ -150,6 +150,8 @@
             <xsd:element name="attribute" type="eFaps:data-import-attribute" minOccurs="0" maxOccurs="unbounded" />
             <xsd:element name="classification" type="eFaps:data-import-classification" minOccurs="0"
                 maxOccurs="unbounded" />
+            <xsd:element name="attribute-set" type="eFaps:data-import-attribute-set" minOccurs="0"
+                maxOccurs="unbounded" />
         </xsd:sequence>
         <xsd:attribute name="name" type="xsd:string" use="required" />
         <xsd:attribute name="column" type="xsd:string" use="optional" />
@@ -169,6 +171,16 @@
             </xsd:complexContent>
         </xsd:complexType>
     </xsd:element>
+
+    <xsd:complexType name="data-import-attribute-set">
+        <xsd:sequence>
+            <xsd:element name="attribute" type="eFaps:data-import-attribute" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="column" type="xsd:string" />
+        <xsd:attribute name="validate" type="xsd:boolean" default="true" />
+        <xsd:attribute name="validateClass" type="xsd:string" />
+    </xsd:complexType>
 
     <xsd:complexType name="data-import-classification">
         <xsd:sequence>
