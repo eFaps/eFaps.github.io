@@ -16,7 +16,10 @@
   limitations under the License.
 
 -->
-<xsd:schema targetNamespace="http://www.efaps.org/xsd" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eFaps="http://www.efaps.org/xsd">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.efaps.org/xsd"
+    elementFormDefault="qualified"
+    xmlns:eFaps="http://www.efaps.org/xsd">
 
     <!-- RootElements -->
     <xsd:element name="access-set">
@@ -839,6 +842,17 @@
         </xsd:complexContent>
     </xsd:complexType>
 
+    <xsd:complexType name="definition_ui-module">
+        <xsd:complexContent>
+            <xsd:extension base="eFaps:AbstractDefinition">
+                <xsd:sequence>
+                    <xsd:element name="property" type="eFaps:property_ui-form" maxOccurs="unbounded" minOccurs="0" />
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+
     <xsd:complexType name="definition_image">
         <xsd:complexContent>
             <xsd:extension base="eFaps:AbstractDefinition">
@@ -1365,10 +1379,29 @@
         </xsd:simpleContent>
     </xsd:complexType>
 
+
     <xsd:simpleType name="property_ui-form_enum">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="Weight" />
             <xsd:enumeration value="MultiPart" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+   <xsd:complexType name="property_ui-module">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="name" use="required">
+                    <xsd:simpleType>
+                        <xsd:union memberTypes="xsd:string eFaps:property_ui-module_enum"></xsd:union>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="property_ui-module_enum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ModuleKey" />
         </xsd:restriction>
     </xsd:simpleType>
 
