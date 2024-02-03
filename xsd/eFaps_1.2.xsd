@@ -846,7 +846,7 @@
         <xsd:complexContent>
             <xsd:extension base="eFaps:AbstractDefinition">
                 <xsd:sequence>
-                    <xsd:element name="property" type="eFaps:property_ui-form" maxOccurs="unbounded" minOccurs="0" />
+                    <xsd:element name="property" type="eFaps:property_ui-module" maxOccurs="unbounded" minOccurs="0" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
